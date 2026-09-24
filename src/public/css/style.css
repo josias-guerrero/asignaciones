@@ -1,0 +1,89 @@
+:root {
+  --rojo: #7a0225;
+  --gris: #6d6e6f;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 3px double black;
+  justify-content: space-between;
+}
+header > span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+header > h1 {
+  font-size: 1.9rem;
+}
+body {
+  max-width: 1050px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+small {
+  color: #6b7280;
+}
+.fila {
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.asignado {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.asignado small {
+  text-align: right;
+  line-height: 1.2;
+}
+.cinta {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.35rem;
+  color: white;
+  padding: 2px 8px;
+  width: 50%;
+}
+.cinta--tesoros {
+  background: var(--gris);
+}
+.cinta--maestros {
+  background: #b58301;
+}
+.cinta--vida {
+  background: var(--rojo);
+}
+.punto {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.punto--rojo {
+  background-color: var(--rojo);
+}
+.punto--gris {
+  background-color: var(--gris);
+}
+.cancion--roja {
+  color: var(--rojo);
+}
+.cancion--gris {
+  color: var(--gris);
+}

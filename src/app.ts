@@ -5,6 +5,7 @@ import { errorHandler, notFound } from './middlewares/error.middleware.js'
 const app: Application = express()
 app.use(express.json())
 
+app.use(express.static('./src/public'))
 app.use('/api/meetings', meetingsRouter)
 
 app.use(notFound)
