@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link href="css/style.css" rel="stylesheet" />
+    <script type="module" src="js/programa.js"></script>
   </head>
   <body>
     <header>
@@ -13,20 +14,20 @@
     </header>
     <section>
       <div class="fila">
-        <h3><span>semana</span> | <span>capitulos</span></h3>
+        <h3><span id="week">semana</span> | <span id="chapters">capitulos</span></h3>
         <div class="asignado">
           <small>Presidente:</small>
-          <span>presidente</span>
+          <span id="president">presidente</span>
         </div>
       </div>
       <div class="fila">
         <div class="cancion--gris">
-          <small>0:00</small> <span class="punto punto--gris"></span> <span>Canción </span
-          ><span>numero cancion</span>
+          <small>0:00</small> <span class="punto punto--gris"></span>
+          <span id="song-start">Canción </span>
         </div>
         <div class="asignado">
           <small>Oración:</small>
-          <span>orador</span>
+          <span id="prayer-start">orador</span>
         </div>
       </div>
       <div class="fila">
@@ -36,7 +37,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="out-treasures">
       <h2 class="cinta cinta--tesoros">TESOROS DE LA BIBLIA</h2>
       <div class="fila">
         <div><small>0:00</small> <span>Discurso de tesoros</span></div>
@@ -60,7 +61,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="out-ministry">
       <h2 class="cinta cinta--maestros">SEAMOS MEJORES MAESTROS</h2>
       <div class="fila">
         <div><small>0:00</small> <span>Presentacion de seamos mejores maestros</span></div>
@@ -91,11 +92,11 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="out-christians">
       <h2 class="cinta cinta--vida">NUESTRA VIDA CRISTIANA</h2>
       <div class="cancion--roja">
-        <small>0:00</small> <span class="punto punto--rojo"></span> <span>Canción </span
-        ><span>numero cancion</span>
+        <small>0:00</small> <span class="punto punto--rojo"></span>
+        <span id="song-half">Canción </span>
       </div>
       <div class="fila">
         <div>
@@ -129,12 +130,12 @@
       </div>
       <div class="fila">
         <div class="cancion--roja">
-          <small>0:00</small> <span class="punto punto--rojo"></span> <span>Canción </span
-          ><span>numero cancion</span>
+          <small>0:00</small> <span class="punto punto--rojo"></span>
+          <span id="song-end">Canción </span>
         </div>
         <div class="asignado">
           <small>Oración:</small>
-          <span>orador</span>
+          <span id="prayer-end">orador</span>
         </div>
       </div>
     </section>

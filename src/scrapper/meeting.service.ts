@@ -6,7 +6,7 @@ interface MeetingTopics {
   week: string
   chapters: string
   songs: string[]
-  treasures: string
+  treasures: string[]
   ministry: string[]
   christians: string[]
 }
@@ -45,7 +45,7 @@ async function getMeetingObject(path: string): Promise<MeetingTopics> {
     week: '',
     chapters: '',
     songs: [],
-    treasures: '',
+    treasures: [],
     ministry: [],
     christians: [],
   }
@@ -68,7 +68,11 @@ async function getMeetingObject(path: string): Promise<MeetingTopics> {
         .trim()
     )
     .get()
-  meeting.treasures = $('#p5').text().trim() + '(10 mins.)'
+  meeting.treasures.push($('#p5').text().trim() + ' (10 mins.)')
+  meeting.treasures.push(
+    '2. Busquemos perlas escondidas (10 mins.)',
+    '3. Lectura de la Biblia (4 mins.)'
+  )
   meeting.ministry = $('h3.du-color--gold-700')
     .map((_, el) =>
       $(el).text().trim().concat(' ', $(el).next('div').children('p').text().slice(0, 9).trim())
@@ -82,6 +86,8 @@ async function getMeetingObject(path: string): Promise<MeetingTopics> {
         .concat(' ', $(el).next('div').find('p').first().text().slice(0, 10).trim())
     )
     .get()
+
+  // No variable info
   return meeting
 }
 
