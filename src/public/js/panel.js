@@ -16,6 +16,7 @@ yearInput.addEventListener('change', (e) => {
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   localStorage.setItem('currentMeeting', JSON.stringify(weekStore))
+  window.location.href = 'programa.html'
 })
 
 form.addEventListener('input', (e) => {
@@ -31,7 +32,7 @@ loadButton.addEventListener('click', async (e) => {
   form.innerHTML = `
     <div class="fila">
       <span>Oracion de inicio</span>
-      <input type="string" name="prayerStart" data-section="meetingInfo" data-topic="prayerStart" data-field="assigned"/>
+      <input type="text" name="prayerStart" data-section="meetingInfo" data-topic="prayerStart" data-field="assigned"/>
     </div>
     <div class="fila">
       <span>Presidente</span>
@@ -94,13 +95,12 @@ function createTwoInputRow(titleText, sectionName) {
 
   student.dataset.section = sectionName
   student.dataset.topic = titleText
-  student.dataset.field = 'student'
+  student.dataset.field = 'assigned'
   student.required = true
 
   assistant.dataset.section = sectionName
   assistant.dataset.topic = titleText
   assistant.dataset.field = 'assistant'
-  assistant.required = true
   div.append(student, assistant)
 
   row.append(title, div)
