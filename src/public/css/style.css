@@ -46,6 +46,9 @@ small {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem;
 }
+.editable {
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+}
 .asignado {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -103,6 +106,19 @@ small {
   gap: 0.25rem;
   white-space: nowrap;
 }
+.btn-eliminar {
+  width: 16px;
+  border: 0;
+  background-color: red;
+  color: white;
+}
+
+/* publisher editor section */
+.publisher-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media print {
   .no-print {
     display: none;

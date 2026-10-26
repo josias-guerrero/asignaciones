@@ -1,4 +1,3 @@
-const parser = new DOMParser()
 const store = JSON.parse(localStorage.getItem('currentMeeting'))
 // Meeting Info
 const chairman = document.getElementById('president')
@@ -17,9 +16,16 @@ const ministrySection = document.getElementById('out-ministry')
 const endDiv = document.getElementById('end')
 document.addEventListener('DOMContentLoaded', generateMeeting)
 
+document.title = `Programa ${store.week}`
+
 const print = document.getElementById('pdf')
 print.addEventListener('click', () => {
   window.print()
+})
+
+const home = document.getElementById('home')
+home.addEventListener('click', () => {
+  window.location.href = '/'
 })
 
 function generateMeeting() {
@@ -32,9 +38,9 @@ function generateMeeting() {
   fillChristians()
 }
 function fillMeetingGeneralInfo() {
-  chairman.textContent = store.meetingInfo.chairman.assigned
-  prayerStart.textContent = store.meetingInfo.prayerStart.assigned
-  prayerEnd.textContent = store.meetingInfo.prayerEnd.assigned
+  chairman.textContent = store.meetingInfo.Presidente.assigned
+  prayerStart.textContent = store.meetingInfo['Oración de inicio'].assigned
+  prayerEnd.textContent = store.meetingInfo['Oración de conclusión'].assigned
   songStart.textContent = store.songs[0]
   songHalf.textContent = store.songs[1]
   songEnd.textContent = store.songs[2]
@@ -42,29 +48,29 @@ function fillMeetingGeneralInfo() {
   outChapters.textContent = store.chapters
 }
 function fillTreasures() {
-  Object.entries(store.treasures).forEach(([key, value], index, array) => {
+  store.treasures.forEach((item, index, array) => {
     if (index === array.length - 1) {
-      const row = generateRow(key, value.assigned, null, 'Estudiante:')
+      const row = generateRow(item.topic, item.assigned, null, 'Estudiante:')
       treasuresSection.append(row)
     } else {
-      const row = generateRow(key, value.assigned)
+      const row = generateRow(item.topic, item.assigned)
       treasuresSection.append(row)
     }
   })
 }
 function fillMinistry() {
-  Object.entries(store.ministry).forEach(([key, value]) => {
-    const row = generateRow(key, value.assigned, value.assistant, 'Estudiante/Ayudante:')
+  store.ministry.forEach((item) => {
+    const row = generateRow(item.topic, item.assigned, item.assistant, 'Estudiante/Ayudante:')
     ministrySection.append(row)
   })
 }
 function fillChristians() {
-  Object.entries(store.christians).forEach(([key, value], index, array) => {
+  store.christians.forEach((item, index, array) => {
     if (index === array.length - 1) {
-      const row = generateRow(key, value.assigned, value.assistant, 'Conductor/Lector:')
+      const row = generateRow(item.topic, item.assigned, item.assistant, 'Conductor/Lector:')
       christiansSection.insertBefore(row, endDiv)
     } else {
-      const row = generateRow(key, value.assigned)
+      const row = generateRow(item.topic, item.assigned)
       christiansSection.insertBefore(row, endDiv)
     }
   })

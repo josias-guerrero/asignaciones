@@ -20,16 +20,21 @@
   "packageManager": "pnpm@12.5.1",
   "type": "module",
   "devDependencies": {
-    "@types/node": "^26.6.2",
+    "@eslint/css": "^2.0.1",
+    "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
-    "prettier": "^3.9.8",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
     "ofetch": "^1.5.1",
+    "prettier": "^3.9.8",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
     "express": "^5.2.1",
+    "jiti": "^2.7.0",
     "zod": "^4.6.5"
   }
 }

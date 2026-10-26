@@ -6,11 +6,22 @@
     <title>Programa RVMC</title>
     <link href="css/style.css" rel="stylesheet" />
     <script type="module" src="js/panel.js"></script>
+    <script type="module" src="js/publishers.js"></script>
   </head>
+
   <body>
     <input type="number" id="year" min="2025" max="2099" />
     <select id="week"></select>
     <button type="button" id="load-data">Cargar Datos</button>
+    <button command="show-modal" commandfor="publishers-modal">Editar lista de publicadores</button>
+    <dialog id="publishers-modal">
+      <form id="new-publisher-form">
+        <input type="text" id="new-publisher-input" placeholder="Juán de la Rosa" required />
+        <button type="submit" id="add-new-publisher">Agregar nuevo publicador</button>
+      </form>
+      <div id="publishers-list"></div>
+      <button commandfor="publishers-modal" command="close">Cerrar editor</button>
+    </dialog>
     <form id="carga"></form>
   </body>
 </html>

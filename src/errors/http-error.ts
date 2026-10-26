@@ -8,3 +8,4 @@ export class HttpError extends Error {
 }
 
 export const NotFound = (msg: string) => new HttpError(404, msg)
+export const BadRequest = (msg: string) => new HttpError(400, msg)
